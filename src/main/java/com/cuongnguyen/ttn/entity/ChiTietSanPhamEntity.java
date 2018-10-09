@@ -1,0 +1,73 @@
+package com.cuongnguyen.ttn.entity;
+
+import javax.persistence.*;
+
+@Entity(name = "chitietsanpham")
+public class ChiTietSanPhamEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int maChiTietSanPham;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "masanpham")
+    private SanPhamEntity sanPhamEntity;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "masize")
+    private SizeEntity sizeEntity;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "mamau")
+    private MauSanPhamEntity mauSanPhamEntity;
+
+    private int soLuong;
+    private String ngayNhap;
+
+    public int getMaChiTietSanPham() {
+        return maChiTietSanPham;
+    }
+
+    public void setMaChiTietSanPham(int maChiTietSanPham) {
+        this.maChiTietSanPham = maChiTietSanPham;
+    }
+
+    public SanPhamEntity getSanPhamEntity() {
+        return sanPhamEntity;
+    }
+
+    public void setSanPhamEntity(SanPhamEntity sanPhamEntity) {
+        this.sanPhamEntity = sanPhamEntity;
+    }
+
+    public SizeEntity getSizeEntity() {
+        return sizeEntity;
+    }
+
+    public void setSizeEntity(SizeEntity sizeEntity) {
+        this.sizeEntity = sizeEntity;
+    }
+
+    public MauSanPhamEntity getMauSanPhamEntity() {
+        return mauSanPhamEntity;
+    }
+
+    public void setMauSanPhamEntity(MauSanPhamEntity mauSanPhamEntity) {
+        this.mauSanPhamEntity = mauSanPhamEntity;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
+    }
+
+    public String getNgayNhap() {
+        return ngayNhap;
+    }
+
+    public void setNgayNhap(String ngayNhap) {
+        this.ngayNhap = ngayNhap;
+    }
+}
