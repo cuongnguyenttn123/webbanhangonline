@@ -50,8 +50,8 @@
                             </div>
                             <button type="submit" class="btn btn-default">Submit</button>
                         </form>
-                        <li><a href="/login">DANG NHAP</a></li>
-                        <li><a href="/login">DANG KY</a></li>
+                        <li><a href="login/">DANG NHAP</a></li>
+                        <li><a href="login/">DANG KY</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->

@@ -8,10 +8,20 @@ public class KhuyenMaiEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maKhuyenMai;
+
+    @Column(name = "giagiam")
     private int giagiam;
+
+    @Column(name = "thoigianbatdau")
     private String thoiGianBatDau;
+
+    @Column(name = "thoigianketthuc")
     private String thoiGianKetThuc;
+
+    @Column(name = "mota")
     private String moTa;
+
+    @Column(name = "hinhkhuyenmai")
     private String hinhKhuyenMai;
 
     @ManyToMany(cascade = CascadeType.ALL)

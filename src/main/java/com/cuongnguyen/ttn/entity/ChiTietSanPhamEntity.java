@@ -19,8 +19,9 @@ public class ChiTietSanPhamEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "mamau")
     private MauSanPhamEntity mauSanPhamEntity;
-
+    @Column(name = "soluong")
     private int soLuong;
+    @Column(name = "ngaynhap")
     private String ngayNhap;
 
     public int getMaChiTietSanPham() {

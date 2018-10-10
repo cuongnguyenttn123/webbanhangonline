@@ -33,10 +33,15 @@
             <div id="container-login-right">
                 <div class="container-login-left-header" id="active">
                     <span id="dangnhap">Dang Nhap</span> / <span>Dang Ky</span>
+
+
                     <form action="" method="post">
+
+                        ${error}
+
                         <div id="form-dang-nhap">
-                            <input class="nhap" type="text" name="userName"><br/>
-                            <input class="nhap" type="text" name="passWord"><br/>
+                            <input class="nhap" type="text" name="tendangnhap"><br/>
+                            <input class="nhap" type="text" name="matkhau"><br/>
                             <input id="login" type="submit" value="Dang Nhap">
                         </div>
                     </form>

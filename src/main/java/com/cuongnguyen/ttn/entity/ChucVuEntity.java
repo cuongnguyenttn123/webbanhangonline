@@ -7,16 +7,16 @@ public class ChucVuEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int chucVu;
+    private int maChucVu;
     @Column(name = "tenchucvu")
     private String tenChucVu;
 
-    public int getChucVu() {
-        return chucVu;
+    public int getMaChucVu() {
+        return maChucVu;
     }
 
-    public void setChucVu(int chucVu) {
-        this.chucVu = chucVu;
+    public void setMaChucVu(int maChucVu) {
+        this.maChucVu = maChucVu;
     }
 
     public String getTenChucVu() {

@@ -6,7 +6,9 @@ import javax.persistence.*;
 public class ChiTietHoaDonEntity {
     @EmbeddedId
     ChiTietHoaDonId chiTietHoaDonId;
+    @Column(name = "soluong")
     int soLuong;
+    @Column(name = "giatien")
     int giaTien;
 
     public ChiTietHoaDonId getChiTietHoaDonId() {

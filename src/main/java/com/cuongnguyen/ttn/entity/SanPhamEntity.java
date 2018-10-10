@@ -8,10 +8,19 @@ public class SanPhamEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maSanPham;
+
+    @Column(name = "tensanpham")
     private String  tenSanPham;
+
+    @Column(name = "giatien")
     private int giaTien;
+
+    @Column(name = "motasanpham")
     private String moTaSanPham;
+
+    @Column(name = "hinhsanpham")
     private String hinhSanPham;
+
     @OneToOne
     @JoinColumn(name = "madanhmuc")
     private DanhMucSanPhamEntity danhMucSanPham;

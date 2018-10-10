@@ -1,15 +1,14 @@
 package com.cuongnguyen.ttn.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "mausanpham")
 public class MauSanPhamEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maMau;
+
+    @Column(name = "tenmausac")
     private String tenMauSac;
 
     public int getMaMau() {

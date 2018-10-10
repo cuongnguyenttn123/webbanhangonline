@@ -11,9 +11,10 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="com.cuongnguyen.ttn.controller"></context:component-scan>
-    <context:component-scan base-package="com.cuongnguyen.ttn.entity"></context:component-scan>
-
+    <context:component-scan base-package="com.cuongnguyen.ttn.controller"/>
+    <context:component-scan base-package="com.cuongnguyen.ttn.entity"/>
+    <context:component-scan base-package="com.cuongnguyen.ttn.service"/>
+    <context:component-scan base-package="com.cuongnguyen.ttn.dao"/>
 
 
     <bean id="dateSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
