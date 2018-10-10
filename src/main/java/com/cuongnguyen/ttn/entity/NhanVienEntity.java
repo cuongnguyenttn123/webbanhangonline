@@ -7,15 +7,29 @@ public class NhanVienEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int maNhanVien;
+
+    @Column(name = "hoten")
     private String hoTen;
+
+    @Column(name = "diachi")
     private String diaChi;
-    private boolean gioiTinh;
+
+    @Column(name = "gioitinh")
+    private int gioiTinh;
+
+    @Column(name = "cmnd")
     private String chungMinhnd;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "machucvu")
     private ChucVuEntity chucVu;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "tendangnhap")
     private String tenDangNhap;
+
+    @Column(name = "matkhau")
     private String matKhau;
 
     public int getMaNhanVien() {
@@ -42,11 +56,11 @@ public class NhanVienEntity {
         this.diaChi = diaChi;
     }
 
-    public boolean isGioiTinh() {
+    public int isGioiTinh() {
         return gioiTinh;
     }
 
-    public void setGioiTinh(boolean gioiTinh) {
+    public void setGioiTinh(int gioiTinh) {
         this.gioiTinh = gioiTinh;
     }
 

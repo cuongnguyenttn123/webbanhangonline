@@ -8,10 +8,19 @@ public class HoaDonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maHoaDon;
+    @Column(name = "tenkhachhang")
     private String tenKhachHang;
+
+    @Column(name = "sodt")
     private String soDt;
+
+    @Column(name = "diachi")
     private String diaChi;
-    private boolean tinhTrang;
+
+    @Column(name = "tinhtrang")
+    private int tinhTrang;
+
+    @Column(name = "ngaymua")
     private String ngayMua;
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -58,11 +67,11 @@ public class HoaDonEntity {
         this.diaChi = diaChi;
     }
 
-    public boolean isTinhTrang() {
+    public int isTinhTrang() {
         return tinhTrang;
     }
 
-    public void setTinhTrang(boolean tinhTrang) {
+    public void setTinhTrang(int tinhTrang) {
         this.tinhTrang = tinhTrang;
     }
 

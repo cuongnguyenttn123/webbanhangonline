@@ -8,7 +8,9 @@ public class DanhMucSanPhamEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maDanhMuc;
+    @Column(name = "tendanhmuc")
     private String tenDanhMuc;
+    @Column(name = "hinhdanhmuc")
     private String hinhDanhMuc;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "masanpham")
