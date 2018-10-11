@@ -19,6 +19,7 @@ public class NhanVienEntity {
 
     @Column(name = "cmnd")
     private String chungMinhnd;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "machucvu")
     private ChucVuEntity chucVu;

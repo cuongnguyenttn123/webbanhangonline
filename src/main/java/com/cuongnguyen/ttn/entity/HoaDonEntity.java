@@ -8,13 +8,14 @@ public class HoaDonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maHoaDon;
+
     @Column(name = "tenkhachhang")
     private String tenKhachHang;
 
     @Column(name = "sodt")
     private String soDt;
 
-    @Column(name = "diachi")
+    @Column(name = "diachigiaohang")
     private String diaChi;
 
     @Column(name = "tinhtrang")
