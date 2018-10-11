@@ -21,9 +21,12 @@ public class SanPhamEntity {
     @Column(name = "hinhsanpham")
     private String hinhSanPham;
 
-    @OneToOne
-    @JoinColumn(name = "madanhmuc")
-    private DanhMucSanPhamEntity danhMucSanPham;
+    @Column(name = "danhcho")
+    private String danhCho;
+
+
+    @Column(name = "madanhmucsanpham")
+    private int danhMucSanPham;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "masanpham")
@@ -41,6 +44,13 @@ public class SanPhamEntity {
 
     public void setDanhSachKhuyenMai(Set<KhuyenMaiEntity> danhSachKhuyenMai) {
         this.danhSachKhuyenMai = danhSachKhuyenMai;
+    }
+    public String getDanhCho() {
+        return danhCho;
+    }
+
+    public void setDanhCho(String danhCho) {
+        this.danhCho = danhCho;
     }
 
     public int getMaSanPham() {
@@ -83,11 +93,11 @@ public class SanPhamEntity {
         this.hinhSanPham = hinhSanPham;
     }
 
-    public DanhMucSanPhamEntity getDanhMucSanPham() {
+    public int getDanhMucSanPham() {
         return danhMucSanPham;
     }
 
-    public void setDanhMucSanPham(DanhMucSanPhamEntity danhMucSanPham) {
+    public void setDanhMucSanPham(int danhMucSanPham) {
         this.danhMucSanPham = danhMucSanPham;
     }
 

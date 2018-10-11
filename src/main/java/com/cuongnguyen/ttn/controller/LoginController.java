@@ -1,7 +1,11 @@
 package com.cuongnguyen.ttn.controller;
 
+import com.cuongnguyen.ttn.entity.DanhMucSanPhamEntity;
 import com.cuongnguyen.ttn.entity.NhanVienEntity;
+import com.cuongnguyen.ttn.entity.SanPhamEntity;
+import com.cuongnguyen.ttn.service.DanhMucSanPhamService;
 import com.cuongnguyen.ttn.service.NhanVienService;
+import com.cuongnguyen.ttn.service.SanPhamService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +21,16 @@ public class LoginController {
     @Autowired
     NhanVienService nhanVienService;
 
+    @Autowired
+    SanPhamService sanPhamService;
+
+    @Autowired
+    DanhMucSanPhamService danhMucSanPhamService;
 
     @GetMapping
     public String getPageLogin(){
+        DanhMucSanPhamEntity danhMucSanPhamEntity = danhMucSanPhamService.getDanhMucSanPhamById(1);
+        System.out.println(danhMucSanPhamEntity);
         return "login";
     }
     @PostMapping

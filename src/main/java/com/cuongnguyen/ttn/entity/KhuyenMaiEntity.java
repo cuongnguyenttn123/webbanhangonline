@@ -12,6 +12,11 @@ public class KhuyenMaiEntity {
     @Column(name = "giagiam")
     private int giagiam;
 
+
+
+    @Column(name = "tenkhuyenmai")
+    private String tenKhuyenMai;
+
     @Column(name = "thoigianbatdau")
     private String thoiGianBatDau;
 
@@ -34,6 +39,14 @@ public class KhuyenMaiEntity {
         return danhSachSanPham;
     }
 
+
+    public String getTenKhuyenMai() {
+        return tenKhuyenMai;
+    }
+
+    public void setTenKhuyenMai(String tenKhuyenMai) {
+        this.tenKhuyenMai = tenKhuyenMai;
+    }
     public void setDanhSachSanPham(Set<SanPhamEntity> danhSachSanPham) {
         this.danhSachSanPham = danhSachSanPham;
     }

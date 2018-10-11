@@ -115,245 +115,28 @@
 
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail wow flipInX ">
-                    <img src="../../resources/Image/nu/nu10.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <a href="#" class="btn btn-default">Xem chi tiet</a>
-                        </p>
+            <c:forEach var = "sanpham" items="${list}">
+
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="thumbnail wow flipInX ">
+                        <img src="../../resources/Image/nu/${sanpham.getHinhSanPham()}.jpg" alt="">
+                        <div class="caption text-center">
+                            <h3>${sanpham.getTenSanPham()}</h3>
+                            <p>
+                            </p>
+                            <p>
+                                <a href="#" class="btn btn-primary">Mua Hang</a>
+                                <a href="#" class="btn btn-default">Xem chi tiet</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail wow flipInX">
-                    <img src="../../resources/Image/nu/nu2.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <a href="#" class="btn btn-default">Xem chi tiet</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail wow flipInX">
-                    <img src="../../resources/Image/nu/nu3.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <a href="#" class="btn btn-default">Xem chi tiet</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail wow flipInX">
-                    <img src="../../resources/Image/nu/nu4.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <a href="#" class="btn btn-default">Xem chi tiet</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+
+            </c:forEach>
+
+
 
         </div>
-
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail wow swing">
-                    <img src="../../resources/Image/nu/nu5.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <a href="#" class="btn btn-default">Xem chi tiet</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu6.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <a href="#" class="btn btn-default">Xem chi tiet</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu7.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <a href="#" class="btn btn-default">Xem chi tiet</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu8.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <%--<a href="#" class="btn btn-default">Action</a>--%>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu4.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <%--<a href="#" class="btn btn-default">Action</a>--%>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu5.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <%--<a href="#" class="btn btn-default">Action</a>--%>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu6.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <%--<a href="#" class="btn btn-default">Action</a>--%>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu7.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <%--<a href="#" class="btn btn-default">Action</a>--%>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu5.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <%--<a href="#" class="btn btn-default">Action</a>--%>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu10.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <%--<a href="#" class="btn btn-default">Action</a>--%>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu10.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <%--<a href="#" class="btn btn-default">Action</a>--%>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div class="thumbnail">
-                    <img src="../../resources/Image/nu/nu2.jpg" alt="">
-                    <div class="caption text-center">
-                        <h3>Ao So-Mi Nam</h3>
-                        <p>
-                        </p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Mua Hang</a>
-                            <%--<a href="#" class="btn btn-default">Action</a>--%>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
 
     </div>
 
