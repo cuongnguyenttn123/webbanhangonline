@@ -19,7 +19,7 @@ public class SanPhamDAO  implements SanPhamImp {
     @Transactional
     public List<SanPhamEntity> getListSanPham(int sobatdau) {
         Session session = sessionFactory.getCurrentSession().getSession();
-        List<SanPhamEntity> sanPhamEntities =(List<SanPhamEntity>) session.createQuery("from sanpham").setFirstResult(sobatdau).setMaxResults(2).getResultList();
+        List<SanPhamEntity> sanPhamEntities =(List<SanPhamEntity>) session.createQuery("from sanpham").setFirstResult(sobatdau).setMaxResults(20).getResultList();
         return sanPhamEntities;
     }
     @Transactional

@@ -1,6 +1,9 @@
 package com.cuongnguyen.ttn.controller;
 
-import com.cuongnguyen.ttn.entity.SanPhamEntity;
+import com.cuongnguyen.ttn.entity.*;
+import com.cuongnguyen.ttn.service.ChiTietSanPhamService;
+import com.cuongnguyen.ttn.service.HoaDonService;
+import com.cuongnguyen.ttn.service.KhuyenMaiService;
 import com.cuongnguyen.ttn.service.SanPhamService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -22,9 +25,21 @@ public class TrangChuController {
     @Autowired
     SanPhamService sanPhamService;
 
+    @Autowired
+    ChiTietSanPhamService chiTietSanPhamService;
+
+    @Autowired
+    KhuyenMaiService khuyenMaiService;
+
+    @Autowired
+    HoaDonService hoaDonService;
+
     @GetMapping
     @Transactional
     public String getTrangChu(ModelMap modelMap){
+        List<ChiTietKhuyenMaiEntity> khuyenMaiEntities = khuyenMaiService.getChiTiet();
+        List<HoaDonEntity> list12 = hoaDonService.getHoaDon();
+        List<ChiTietSanPhamEntity> chiTietSanPhamEntities = chiTietSanPhamService.getChiTietSanPham();
         List<SanPhamEntity> list = sanPhamService.getListSanPham(0);
         modelMap.addAttribute("list", list);
         return "trangchu";

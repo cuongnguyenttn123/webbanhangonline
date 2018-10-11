@@ -21,6 +21,7 @@ public class ChiTietSanPhamEntity {
     private MauSanPhamEntity mauSanPhamEntity;
     @Column(name = "soluong")
     private int soLuong;
+
     @Column(name = "ngaynhap")
     private String ngayNhap;
 

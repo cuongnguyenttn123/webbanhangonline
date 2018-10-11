@@ -8,47 +8,38 @@ public class KhuyenMaiEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maKhuyenMai;
-
     @Column(name = "giagiam")
     private int giagiam;
-
-
-
     @Column(name = "tenkhuyenmai")
     private String tenKhuyenMai;
-
     @Column(name = "thoigianbatdau")
     private String thoiGianBatDau;
-
     @Column(name = "thoigianketthuc")
     private String thoiGianKetThuc;
-
     @Column(name = "mota")
     private String moTa;
-
     @Column(name = "hinhkhuyenmai")
     private String hinhKhuyenMai;
+    @ManyToMany
+    @JoinTable(name = "chitietkhuyenmai",
+            joinColumns = {@JoinColumn(name = "makhuyenmai", referencedColumnName = "makhuyenmai")},
+            inverseJoinColumns = {@JoinColumn(name = "masanpham", referencedColumnName = "masanpham")} )
+    private Set<SanPhamEntity> dsSanPham;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "chitietsanpham",joinColumns = {@JoinColumn(name = "maKhuyenMai",
-            referencedColumnName = "makhuyenmai")},
-    inverseJoinColumns = {@JoinColumn(name = "masanpham", referencedColumnName = "maSanPham")})
-    Set<SanPhamEntity> danhSachSanPham;
-
-    public Set<SanPhamEntity> getDanhSachSanPham() {
-        return danhSachSanPham;
-    }
-
-
-    public String getTenKhuyenMai() {
-        return tenKhuyenMai;
+    public Set<SanPhamEntity> getDsKhuyenMai() {
+        return dsSanPham;
     }
 
     public void setTenKhuyenMai(String tenKhuyenMai) {
         this.tenKhuyenMai = tenKhuyenMai;
     }
-    public void setDanhSachSanPham(Set<SanPhamEntity> danhSachSanPham) {
-        this.danhSachSanPham = danhSachSanPham;
+
+    public void setDsKhuyenMai(Set<SanPhamEntity> dsKhuyenMai) {
+        this.dsSanPham = dsKhuyenMai;
+    }
+
+    public String getTenKhuyenMai() {
+        return tenKhuyenMai;
     }
 
     public int getMaKhuyenMai() {

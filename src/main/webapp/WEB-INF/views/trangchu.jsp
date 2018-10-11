@@ -122,11 +122,12 @@
                         <img src="../../resources/Image/nu/${sanpham.getHinhSanPham()}.jpg" alt="">
                         <div class="caption text-center">
                             <h3>${sanpham.getTenSanPham()}</h3>
-                            <p>
+                            <p style="color: red; font-size: 20px;">
+                                ${sanpham.getGiaTien()} VND
                             </p>
                             <p>
-                                <a href="#" class="btn btn-primary">Mua Hang</a>
-                                <a href="#" class="btn btn-default">Xem chi tiet</a>
+                                <a href="#" class="btn btn-primary">Mua Hàng</a>
+                                <a href="#" class="btn btn-default">Xem chi tiết</a>
                             </p>
                         </div>
                     </div>

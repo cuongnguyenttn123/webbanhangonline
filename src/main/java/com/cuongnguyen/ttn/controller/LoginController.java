@@ -1,5 +1,6 @@
 package com.cuongnguyen.ttn.controller;
 
+import com.cuongnguyen.ttn.entity.DanhMucSPEntity;
 import com.cuongnguyen.ttn.entity.DanhMucSanPhamEntity;
 import com.cuongnguyen.ttn.entity.NhanVienEntity;
 import com.cuongnguyen.ttn.entity.SanPhamEntity;
@@ -29,7 +30,7 @@ public class LoginController {
 
     @GetMapping
     public String getPageLogin(){
-        DanhMucSanPhamEntity danhMucSanPhamEntity = danhMucSanPhamService.getDanhMucSanPhamById(1);
+        DanhMucSPEntity danhMucSanPhamEntity = danhMucSanPhamService.getDanhMucSanPhamById(1);
         System.out.println(danhMucSanPhamEntity);
         return "login";
     }
