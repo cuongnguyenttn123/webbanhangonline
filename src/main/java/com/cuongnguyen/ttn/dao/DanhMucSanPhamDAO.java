@@ -1,7 +1,7 @@
 package com.cuongnguyen.ttn.dao;
 
 import com.cuongnguyen.ttn.entity.DanhMucSanPhamEntity;
-import com.cuongnguyen.ttn.imp.DanhMucSanPhamIml;
+import com.cuongnguyen.ttn.imp.DanhMucSanPhamImp;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
 import java.util.List;
 @Repository
-public class DanhMucSanPhamDAO implements DanhMucSanPhamIml {
+public class DanhMucSanPhamDAO implements DanhMucSanPhamImp {
 
     @Autowired
     SessionFactory sessionFactory;
