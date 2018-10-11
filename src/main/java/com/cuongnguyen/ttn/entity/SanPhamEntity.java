@@ -24,27 +24,39 @@ public class SanPhamEntity {
     @Column(name = "danhcho")
     private String danhCho;
 
+    @ManyToOne
+    @JoinColumn(name = "madanhmucsanpham")
+    private DanhMucSPEntity danhMucSPEntity;
 
-    @Column(name = "madanhmucsanpham")
-    private int danhMucSanPham;
+    public DanhMucSPEntity getDanhMucSPEntity() {
+        return danhMucSPEntity;
+    }
 
-    @OneToMany(cascade = CascadeType.ALL)
+    public void setDanhMucSPEntity(DanhMucSPEntity danhMucSPEntity) {
+        this.danhMucSPEntity = danhMucSPEntity;
+    }
+
+    @OneToMany
     @JoinColumn(name = "masanpham")
     Set<ChiTietSanPhamEntity> danhSachChiTietSanPham;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "chitietsanpham",joinColumns = {@JoinColumn(name = "maSanPham",
-            referencedColumnName = "masanpham")},
-            inverseJoinColumns = {@JoinColumn(name = "maKhuyenMai", referencedColumnName = "makhuyenmai")})
-    Set<KhuyenMaiEntity> danhSachKhuyenMai;
+    @ManyToMany
+    @JoinTable(name = "chitietkhuyenmai",
+            joinColumns = {@JoinColumn(name = "masanpham", referencedColumnName = "masanpham")},
+    inverseJoinColumns = {@JoinColumn(name = "makhuyenmai", referencedColumnName = "makhuyenmai")} )
+    private Set<KhuyenMaiEntity> dsKhuyenMai;
 
-    public Set<KhuyenMaiEntity> getDanhSachKhuyenMai() {
-        return danhSachKhuyenMai;
+    public Set<KhuyenMaiEntity> getDanhsachKhuyenMai() {
+        return dsKhuyenMai;
     }
 
-    public void setDanhSachKhuyenMai(Set<KhuyenMaiEntity> danhSachKhuyenMai) {
-        this.danhSachKhuyenMai = danhSachKhuyenMai;
+    public void setDanhsachKhuyenMai(Set<KhuyenMaiEntity> danhsachKhuyenMai) {
+        this.dsKhuyenMai = danhsachKhuyenMai;
     }
+
+
+
+
     public String getDanhCho() {
         return danhCho;
     }
@@ -91,14 +103,6 @@ public class SanPhamEntity {
 
     public void setHinhSanPham(String hinhSanPham) {
         this.hinhSanPham = hinhSanPham;
-    }
-
-    public int getDanhMucSanPham() {
-        return danhMucSanPham;
-    }
-
-    public void setDanhMucSanPham(int danhMucSanPham) {
-        this.danhMucSanPham = danhMucSanPham;
     }
 
     public Set<ChiTietSanPhamEntity> getDanhSachChiTietSanPham() {
