@@ -38,7 +38,7 @@ public class LoginController {
     @Transactional
     public String Login(@RequestParam String tendangnhap, @RequestParam String matkhau , ModelMap modelMap){
         if (nhanVienService.checkLogin(tendangnhap, matkhau)){
-            return "redirect:/trangchu";
+            return "redirect:/";
         }else {
             modelMap.addAttribute("error", "username or password not true");
             return "login";
