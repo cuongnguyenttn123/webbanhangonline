@@ -37,9 +37,6 @@ public class TrangChuController {
     @GetMapping
     @Transactional
     public String getTrangChu(ModelMap modelMap){
-        List<ChiTietKhuyenMaiEntity> khuyenMaiEntities = khuyenMaiService.getChiTiet();
-        List<HoaDonEntity> list12 = hoaDonService.getHoaDon();
-        List<ChiTietSanPhamEntity> chiTietSanPhamEntities = chiTietSanPhamService.getChiTietSanPham();
         List<SanPhamEntity> list = sanPhamService.getListSanPham(0);
         modelMap.addAttribute("list", list);
         return "trangchu";

@@ -24,13 +24,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/trangchu">CuongNguyenTTN</a>
+                    <a class="navbar-brand" href="/">CuongNguyenTTN</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/trangchu">TRANG CHU</a></li>
+                        <li><a href="/">TRANG CHU</a></li>
                         <li><a href="#">SAN PHAM</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<b class="caret"></b></a>
@@ -116,23 +116,23 @@
 
         <div class="row">
             <c:forEach var = "sanpham" items="${list}">
-
-                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <div class="thumbnail wow flipInX ">
-                        <img src="../../resources/Image/nu/${sanpham.getHinhSanPham()}.jpg" alt="">
-                        <div class="caption text-center">
-                            <h3>${sanpham.getTenSanPham()}</h3>
-                            <p style="color: red; font-size: 20px;">
-                                ${sanpham.getGiaTien()} VND
-                            </p>
-                            <p>
-                                <a href="#" class="btn btn-primary">Mua Hàng</a>
-                                <a href="#" class="btn btn-default">Xem chi tiết</a>
-                            </p>
+                <a href="/chitiet/${sanpham.getMaSanPham()}">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="thumbnail wow flipInX ">
+                            <img src="../../resources/Image/nu/${sanpham.getHinhSanPham()}.jpg" alt="">
+                            <div class="caption text-center">
+                                <h3>${sanpham.getTenSanPham()}</h3>
+                                <p style="color: red; font-size: 20px;">
+                                    ${sanpham.getGiaTien()} VND
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">Mua Hàng</a>
+                                    <a href="#" class="btn btn-default">Xem chi tiết</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                </a>
             </c:forEach>
 
 

@@ -1,8 +1,11 @@
 package com.cuongnguyen.ttn.entity;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 
 @Entity(name = "chitietsanpham")
+@Proxy(lazy = false)
 public class ChiTietSanPhamEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

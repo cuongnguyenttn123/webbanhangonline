@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -17,7 +18,7 @@ import java.util.List;
 public class KhuyenMaiDAO  implements KhuyenMaiImp {
     @Autowired
     SessionFactory sessionFactory;
-
+    @Transactional
     public List<KhuyenMaiEntity> getKhuyenMai() {
         Session session = sessionFactory.getCurrentSession().getSession();
         List<KhuyenMaiEntity> khuyenMaiEntities = session.createQuery(
