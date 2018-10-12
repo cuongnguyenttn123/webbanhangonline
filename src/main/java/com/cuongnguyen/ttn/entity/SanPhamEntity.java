@@ -24,7 +24,7 @@ public class SanPhamEntity {
     @Column(name = "danhcho")
     private String danhCho;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "madanhmucsanpham")
     private DanhMucSPEntity danhMucSPEntity;
 
@@ -36,11 +36,11 @@ public class SanPhamEntity {
         this.danhMucSPEntity = danhMucSPEntity;
     }
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "masanpham")
     Set<ChiTietSanPhamEntity> danhSachChiTietSanPham;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(name = "chitietkhuyenmai",
             joinColumns = {@JoinColumn(name = "masanpham", referencedColumnName = "masanpham")},
     inverseJoinColumns = {@JoinColumn(name = "makhuyenmai", referencedColumnName = "makhuyenmai")} )

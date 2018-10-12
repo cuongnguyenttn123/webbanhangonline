@@ -1,7 +1,6 @@
 package com.cuongnguyen.ttn.dao;
 
 import com.cuongnguyen.ttn.entity.DanhMucSPEntity;
-import com.cuongnguyen.ttn.entity.DanhMucSanPhamEntity;
 import com.cuongnguyen.ttn.imp.DanhMucSanPhamImp;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -27,7 +26,7 @@ public class DanhMucSanPhamDAO implements DanhMucSanPhamImp {
         return danhMucSanPhamEntity;
     }
 
-    public List<DanhMucSanPhamEntity> getListDM() {
+    public List<DanhMucSPEntity> getListDM() {
         return null;
     }
 }

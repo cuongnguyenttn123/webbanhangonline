@@ -20,7 +20,7 @@ public class KhuyenMaiEntity {
     private String moTa;
     @Column(name = "hinhkhuyenmai")
     private String hinhKhuyenMai;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(name = "chitietkhuyenmai",
             joinColumns = {@JoinColumn(name = "makhuyenmai", referencedColumnName = "makhuyenmai")},
             inverseJoinColumns = {@JoinColumn(name = "masanpham", referencedColumnName = "masanpham")} )

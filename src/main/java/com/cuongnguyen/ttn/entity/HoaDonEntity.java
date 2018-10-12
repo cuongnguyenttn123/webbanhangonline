@@ -24,7 +24,7 @@ public class HoaDonEntity {
     @Column(name = "ngaymua")
     private String ngayMua;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "mahoadon")
     Set<ChiTietHoaDonEntity> dsChiTietHoaDon;
 

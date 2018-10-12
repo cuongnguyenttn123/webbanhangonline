@@ -20,19 +20,7 @@ import java.util.List;
 @RequestMapping("/")
 public class TrangChuController {
     @Autowired
-    SessionFactory sessionFactory;
-
-    @Autowired
     SanPhamService sanPhamService;
-
-    @Autowired
-    ChiTietSanPhamService chiTietSanPhamService;
-
-    @Autowired
-    KhuyenMaiService khuyenMaiService;
-
-    @Autowired
-    HoaDonService hoaDonService;
 
     @GetMapping
     @Transactional

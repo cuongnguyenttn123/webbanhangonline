@@ -18,7 +18,6 @@ public class ChiTietController {
     @GetMapping("/{masanpham}")
     public String Default(@PathVariable int masanpham , ModelMap modelMap){
         SanPhamEntity sanPhamEntity = chiTietSanPhamService.getChiTietSanPham(masanpham);
-        System.out.println(sanPhamEntity.getDanhSachChiTietSanPham());
         modelMap.addAttribute("sanpham", sanPhamEntity);
         return "chitiet";
     }

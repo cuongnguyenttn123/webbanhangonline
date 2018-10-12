@@ -13,7 +13,7 @@ public class DanhMucSPEntity {
     @Column(name = "hinhdanhmucsanpham")
     private String hinhDanhMucSanPham;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "masanpham")
     private Set<SanPhamEntity> danhSachSanPham;
 

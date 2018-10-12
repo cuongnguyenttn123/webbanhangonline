@@ -80,16 +80,18 @@
                         <thead>
                         <tr>
                             <th>Mã sản phẩm</th>
-                            <th>giá tiền</th>
+                            <th>Màu</th>
                             <th>số lượng</th>
                             <th>Đặt mua</th>
                         </tr>
                         </thead>
                         <tbody>
+
+                        <c:forEach var="chitiet" items="${sanpham.getDanhSachChiTietSanPham()}"></c:forEach>
                         <tr>
-                            <td>${sanpham.getMaSanPham()}</td>
-                            <td>${sanpham.getGiaTien()}</td>
-                            <td>${sanpham.getDanhCho()}</td>
+                            <td>${chitiet.getMaSanPham()}</td>
+                            <td>${chitiet.getMauSanPhamEntity().getTenMauSac()}</td>
+                            <td>xxxxxxxxxxx</td>
                             <td><i class="fa fa-plus-circle" data-toggle="tooltip" title="" data-original-title="Thêm Đen, 29 vào giỏ hàng"></i></td>
                         </tr>
                         </tbody>

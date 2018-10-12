@@ -11,15 +11,15 @@ public class ChiTietSanPhamEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int maChiTietSanPham;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "masanpham")
     private SanPhamEntity sanPhamEntity;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "masize")
     private SizeEntity sizeEntity;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "mamau")
     private MauSanPhamEntity mauSanPhamEntity;
     @Column(name = "soluong")

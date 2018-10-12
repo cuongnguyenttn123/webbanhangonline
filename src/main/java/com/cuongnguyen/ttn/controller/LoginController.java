@@ -1,14 +1,9 @@
 package com.cuongnguyen.ttn.controller;
 
 import com.cuongnguyen.ttn.entity.DanhMucSPEntity;
-import com.cuongnguyen.ttn.entity.DanhMucSanPhamEntity;
-import com.cuongnguyen.ttn.entity.NhanVienEntity;
-import com.cuongnguyen.ttn.entity.SanPhamEntity;
 import com.cuongnguyen.ttn.service.DanhMucSanPhamService;
 import com.cuongnguyen.ttn.service.NhanVienService;
 import com.cuongnguyen.ttn.service.SanPhamService;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
