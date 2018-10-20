@@ -47,10 +47,11 @@
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Search">
+                                <button id="button">Thư</button>
                             </div>
                             <button type="submit" class="btn btn-default">Submit</button>
                         </form>
-                        <li><a href="login/">DANG NHAP</a></li>
+                        <li><a href="/login/">DANG NHAP</a></li>
                         <li><a href="login/">DANG KY</a></li>
 
                     </ul>
@@ -147,7 +148,13 @@
 
 
     </div>
+    <div>
+        <div class="container text-center">
+            <span>DAY LA PHAN FOOTER</span>
 
+        </div>
+
+    </div>
 
 
 

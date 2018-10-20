@@ -50,8 +50,8 @@
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
-                    <li><a href="login/">DANG NHAP</a></li>
-                    <li><a href="login/">DANG KY</a></li>
+                    <li><a href="/login/">DANG NHAP</a></li>
+                    <li><a href="/login/">DANG KY</a></li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -79,21 +79,26 @@
                     <table class="table table-condensed">
                         <thead>
                         <tr>
-                            <th>Mã sản phẩm</th>
+                            <th>Mã sp</th>
                             <th>Màu</th>
+                            <th>Size</th>
                             <th>số lượng</th>
+                            <th>Giá tiền</th>
                             <th>Đặt mua</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        <c:forEach var="chitiet" items="${sanpham.getDanhSachChiTietSanPham()}"></c:forEach>
-                        <tr>
-                            <td>${chitiet.getMaSanPham()}</td>
-                            <td>${chitiet.getMauSanPhamEntity().getTenMauSac()}</td>
-                            <td>xxxxxxxxxxx</td>
-                            <td><i class="fa fa-plus-circle" data-toggle="tooltip" title="" data-original-title="Thêm Đen, 29 vào giỏ hàng"></i></td>
-                        </tr>
+                        <c:forEach var="chitiet" items="${sanpham.getDanhSachChiTietSanPham()}">
+                            <tr>
+                                <td class="masanpham" data-masanpham="${chitiet.getSanPhamEntity().getMaSanPham()}">${chitiet.getSanPhamEntity().getTenSanPham()}</td>
+                                <td class="mausanpham" data-mamau = "${chitiet.getMauSanPhamEntity().getMaMau()}">${chitiet.getMauSanPhamEntity().getTenMauSac()}</td>
+                                <td class="masize" data-size="${chitiet.getSizeEntity().getMaSize()}">${chitiet.getSizeEntity().getTenSize()}</td>
+                                <td class="soluong" data-soluong="${chitiet.getSoLuong()}">${chitiet.getSoLuong()}</td>
+                                <td class="giatien" data-giatien="${chitiet.getSanPhamEntity().getGiaTien()}">${chitiet.getSanPhamEntity().getGiaTien()}</td>
+                                <td><button class="muangay btn btn-info">Mua Ngay</button></td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
