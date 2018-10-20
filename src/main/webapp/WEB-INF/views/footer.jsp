@@ -10,7 +10,7 @@
 <script src="<c:url value="/resources/bootstrap-4.1.3-dist/js/bootstrap.min.js"/>"></script>
 <script src="<c:url value="/resources/Js/jquery-3.3.1.min.js"/>"></script>
 <script src="<c:url value="/resources/Js/wow.min.js"/>"></script>
-
+<script src="<c:url value="/resources/Js/custom.js"/>"></script>
 <script>
     new WOW().init();
 </script>

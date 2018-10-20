@@ -15,6 +15,7 @@
     <context:component-scan base-package="com.cuongnguyen.ttn.entity"/>
     <context:component-scan base-package="com.cuongnguyen.ttn.service"/>
     <context:component-scan base-package="com.cuongnguyen.ttn.dao"/>
+    <context:component-scan base-package="com.cuongnguyen.ttn.pojo"/>
 
 
     <bean id="dateSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
