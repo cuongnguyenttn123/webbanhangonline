@@ -1,8 +1,4 @@
 $(document).ready(function () {
-    $("#button").click(function () {
-        alert("cuongnguyen");
-    });
-
     $(".muangay").click(function () {
         var masanpham = $(this).closest("tr").find(".masanpham").attr("data-masanpham");
         var tensanpham = $(this).closest("tr").find(".masanpham").text();
@@ -12,7 +8,6 @@ $(document).ready(function () {
         var tensize = $(this).closest("tr").find(".masize").text();
         var soluong = $(this).closest("tr").find(".soluong").attr("data-soluong");
         var giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
-
         $.ajax({
             url: "/api/xuly",
             type:"get",
@@ -27,7 +22,35 @@ $(document).ready(function () {
                 giaTien : giatien
             }
         }).done(function () {
-            alert("cuongnguyen");
         })
-    });
+    })
+
+    var files = [];
+    $("#hinhanh").change(function(event) {
+        files = event.target.files;
+        var forms = new FormData();
+        forms.append("file", files[0]);
+        $.ajax({
+            url: "/api/xulyupload",
+            type:"POST",
+            data:forms,
+            contentType:false,
+            processData: false,
+            enctype: "multipart/form-data",
+            success: function (value) {
+
+            }
+        })
+    })
+
+    $("#hinh").change(function () {
+        var x = 1;
+        $.ajax({
+            url: "/api/cuongnguyen",
+            type:"POST",
+            data: x
+        }).done(function (value) {
+            alert(value);
+        })
+    })
 })
