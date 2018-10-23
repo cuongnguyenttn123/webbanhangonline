@@ -1,7 +1,11 @@
 package com.cuongnguyen.ttn.controller;
 
+import com.cuongnguyen.ttn.entity.SanPhamEntity;
 import com.cuongnguyen.ttn.pojo.GioHang;
+import com.cuongnguyen.ttn.pojo.SanPham;
 import com.cuongnguyen.ttn.pojo.SanPhamPojo;
+import com.cuongnguyen.ttn.service.SanPhamService;
+import com.cuongnguyen.ttn.utils.convert.SanPhamConvert;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.File;
@@ -23,6 +26,10 @@ import java.util.List;
 @RequestMapping("/api")
 @SessionAttributes("giohang")
 public class ApiController {
+
+    @Autowired
+    SanPhamService sanPhamService;
+
     @GetMapping("/xuly")
     @ResponseBody
     public String xuLyDonHang(@RequestParam int maSanPham, @RequestParam String tenSanPham, @RequestParam int maSize,
@@ -77,14 +84,14 @@ public class ApiController {
         return "cuongnguyen";
     }
 
-    @PostMapping("/nguoinhan")
+    @PostMapping(path = "/nguoinhan", produces = "application/json; charset=utf-8")
     @ResponseBody
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public String formNguoiNhan(@RequestParam String dataJson){
+    public SanPhamPojo formNguoiNhan(@RequestParam String dataJson){
         System.out.println(dataJson);
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            SanPhamPojo sanPham = objectMapper.readValue(dataJson, SanPhamPojo.class);
+            SanPham sanPham = objectMapper.readValue(dataJson, SanPham.class);
             System.out.println(sanPham);
             JsonNode jsonNode = objectMapper.readTree(dataJson);
             System.out.println(jsonNode.get("tennguoimua"));
@@ -93,8 +100,12 @@ public class ApiController {
             e.printStackTrace();
         }
 
-        return "trangchu";
+        SanPhamEntity sanPhamEntity = sanPhamService.getSanPhamById(2);
+        SanPhamPojo sanPhamPojo = SanPhamConvert.sanPhamEntityconvertPojo(sanPhamEntity);
+        return sanPhamPojo;
     }
+
+
 
 
 

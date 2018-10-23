@@ -55,8 +55,6 @@ public class SanPhamEntity {
     }
 
 
-
-
     public String getDanhCho() {
         return danhCho;
     }

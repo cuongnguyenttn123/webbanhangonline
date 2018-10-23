@@ -69,7 +69,10 @@ $(document).ready(function () {
             data:{
                 dataJson : JSON.stringify(json)
             },
-
+            success: function (value) {
+                console.log(value);
+                $("#tennguoimua").val(value.tenSanPham);
+            }
         })
     })
 })

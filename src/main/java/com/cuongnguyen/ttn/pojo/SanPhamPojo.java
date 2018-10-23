@@ -1,9 +1,4 @@
 package com.cuongnguyen.ttn.pojo;
-
-import com.cuongnguyen.ttn.entity.ChiTietSanPhamEntity;
-import com.cuongnguyen.ttn.entity.DanhMucSPEntity;
-import com.cuongnguyen.ttn.entity.KhuyenMaiEntity;
-
 import java.util.Set;
 
 public class SanPhamPojo {
