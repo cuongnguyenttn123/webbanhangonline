@@ -61,30 +61,35 @@
 <%--den phan chi tiet san pham--%>
 <div class="container">
     <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h3>Thông Tin Người Mua/Nhận:</h3>
-            <div class="form-group">
-                <label for="tennguoimua">Tên Người Mua/Nhân: </label>
-                <input class="form-control" id="tennguoimua">
+        <form id="form-nguoimua" action="">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <h3>Thông Tin Người Mua/Nhận:</h3>
 
-                <label for="sodienthoailienlac">Tên Người Mua/Nhân: </label>
-                <input class="form-control" id="sodienthoailienlac">
-                <div class="radio">
-                    <label><input type="radio" name="rdhinhthuc" >Giao Hàng Tận Nơi</label>
+                <div class="form-group">
+                    <label for="tennguoimua">Tên Người Mua/Nhân: </label>
+                    <input class="form-control" name="tennguoimua" id="tennguoimua">
+
+                    <label for="sodienthoailienlac">So dien thoai lien lac: </label>
+                    <input class="form-control" name="sodienthoai" id="sodienthoailienlac">
+                    <div class="radio">
+                        <label><input type="radio" name="dhinhthuc" value="giaohangtannoi">Giao Hàng Tận Nơi</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="dhinhthuc" value="nhanocuahang" >Nhận Hàng Tại Cửa Hàng</label>
+                    </div>
+
+                    <input type="file" name="hinhanh" id="hinhanh" class="form-control">
+
+                    <label for="diachi">Địa Chỉ Nhận Hàng: </label>
+                    <textarea class="form-control" name="diachi" id="diachi"></textarea>
+
+                    <label for="ghichu">Ghi Chú Thêm Thông Tin: </label>
+                    <textarea class="form-control" name="ghichu" id="ghichu"></textarea>
+
+                    <button id="themthongtin">Thêm Thông Tin Người Nhận</button>
                 </div>
-                <div class="radio">
-                    <label><input type="radio" name="rdhinhthuc" >Nhận Hàng Tại Cửa Hàng</label>
-                </div>
-
-                <input type="file" name="hinhanh" id="hinhanh" class="form-control">
-
-                <label for="diachi">Địa Chỉ Nhận Hàng: </label>
-                <textarea class="form-control" id="diachi"></textarea>
-
-                <label for="ghichu">Ghi Chú Thêm Thông Tin: </label>
-                <textarea class="form-control" id="ghichu"></textarea>
             </div>
-        </div>
+        </form>
     </div>
 
 

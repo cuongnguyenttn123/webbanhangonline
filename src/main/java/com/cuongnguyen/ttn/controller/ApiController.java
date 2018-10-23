@@ -1,8 +1,11 @@
 package com.cuongnguyen.ttn.controller;
 
 import com.cuongnguyen.ttn.pojo.GioHang;
+import com.cuongnguyen.ttn.pojo.SanPhamPojo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -74,10 +77,22 @@ public class ApiController {
         return "cuongnguyen";
     }
 
-    @PostMapping("/cuongnguyen")
+    @PostMapping("/nguoinhan")
     @ResponseBody
-    public String getTrangChu(@RequestParam String x){
-        System.out.println(x);
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public String formNguoiNhan(@RequestParam String dataJson){
+        System.out.println(dataJson);
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            SanPhamPojo sanPham = objectMapper.readValue(dataJson, SanPhamPojo.class);
+            System.out.println(sanPham);
+            JsonNode jsonNode = objectMapper.readTree(dataJson);
+            System.out.println(jsonNode.get("tennguoimua"));
+            System.out.println(jsonNode.get("diachi"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return "trangchu";
     }
 
