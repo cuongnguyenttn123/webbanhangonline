@@ -1,13 +1,10 @@
 package com.cuongnguyen.ttn.controller;
-
 import com.cuongnguyen.ttn.pojo.GioHang;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.io.File;
@@ -15,7 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 @Controller
 @RequestMapping("/api")
 @SessionAttributes("giohang")
