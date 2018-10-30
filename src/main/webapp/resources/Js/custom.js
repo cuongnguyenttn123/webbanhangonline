@@ -53,4 +53,26 @@ $(document).ready(function () {
             alert(value);
         })
     })
+
+    $("#themthongtin").click(function (event) {
+        event.preventDefault();
+        var formData = $("#form-nguoimua").serializeArray();
+        json = {};
+        $.each(formData, function(i, field){
+            json[field.name] = field.value;
+        });
+
+
+        $.ajax({
+            url: "/api/nguoinhan",
+            type:"POST",
+            data:{
+                dataJson : JSON.stringify(json)
+            },
+            success: function (value) {
+                console.log(value);
+                $("#tennguoimua").val(value.tenSanPham);
+            }
+        })
+    })
 })
