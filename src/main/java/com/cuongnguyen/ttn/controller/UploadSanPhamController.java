@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UploadSanPhamController {
     @GetMapping
     public String getUpload(){
+        System.out.println("Cường nguyễn");
         return "uploadmotsanphamdemo";
     }
 
