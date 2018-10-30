@@ -1,5 +1,14 @@
 package com.cuongnguyen.ttn.controller;
+
+import com.cuongnguyen.ttn.entity.SanPhamEntity;
 import com.cuongnguyen.ttn.pojo.GioHang;
+import com.cuongnguyen.ttn.pojo.SanPham;
+import com.cuongnguyen.ttn.pojo.SanPhamPojo;
+import com.cuongnguyen.ttn.service.SanPhamService;
+import com.cuongnguyen.ttn.utils.convert.SanPhamConvert;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +21,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 @Controller
 @RequestMapping("/api")
 @SessionAttributes("giohang")
 public class ApiController {
+
+    @Autowired
+    SanPhamService sanPhamService;
+
     @GetMapping("/xuly")
     @ResponseBody
     public String xuLyDonHang(@RequestParam int maSanPham, @RequestParam String tenSanPham, @RequestParam int maSize,
@@ -70,12 +84,28 @@ public class ApiController {
         return "cuongnguyen";
     }
 
-    @PostMapping("/cuongnguyen")
+    @PostMapping(path = "/nguoinhan", produces = "application/json; charset=utf-8")
     @ResponseBody
-    public String getTrangChu(@RequestParam String x){
-        System.out.println(x);
-        return "trangchu";
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public SanPhamPojo formNguoiNhan(@RequestParam String dataJson){
+        System.out.println(dataJson);
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            SanPham sanPham = objectMapper.readValue(dataJson, SanPham.class);
+            System.out.println(sanPham);
+            JsonNode jsonNode = objectMapper.readTree(dataJson);
+            System.out.println(jsonNode.get("tennguoimua"));
+            System.out.println(jsonNode.get("diachi"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        SanPhamEntity sanPhamEntity = sanPhamService.getSanPhamById(2);
+        SanPhamPojo sanPhamPojo = SanPhamConvert.sanPhamEntityconvertPojo(sanPhamEntity);
+        return sanPhamPojo;
     }
+
+
 
 
 
