@@ -42,18 +42,6 @@ $(document).ready(function () {
             }
         })
     })
-
-    $("#hinh").change(function () {
-        var x = 1;
-        $.ajax({
-            url: "/api/cuongnguyen",
-            type:"POST",
-            data: x
-        }).done(function (value) {
-            alert(value);
-        })
-    })
-
     $("#themthongtin").click(function (event) {
         event.preventDefault();
         var formData = $("#form-nguoimua").serializeArray();

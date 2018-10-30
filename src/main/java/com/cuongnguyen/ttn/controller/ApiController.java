@@ -71,7 +71,7 @@ public class ApiController {
     @PostMapping("/xulyupload")
     @ResponseBody
     public String upLoadHinhAnh(MultipartHttpServletRequest request){
-        String path_file_save = context.getRealPath("/resources/Image/sanpham");
+        String path_file_save = context.getRealPath("/resources/Image/sanpham/");
         Iterator<String> listName = request.getFileNames();
         MultipartFile mpf = request.getFile(listName.next());
         File file_name = new File(path_file_save + mpf.getOriginalFilename());
