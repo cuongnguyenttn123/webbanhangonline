@@ -102,7 +102,7 @@
                         </tbody>
                     </table>
                 </div>
-
+                <button class="btn btn-warning" id="btn-kiemtra"><a href="/thanhtoan/">Xem Gio Hang</a></button>
                 </div>
 
 

@@ -84,4 +84,18 @@ public class GioHang {
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
     }
+
+    @Override
+    public String toString() {
+        return "GioHang{" +
+                "maSanPham=" + maSanPham +
+                ", tenSanPham='" + tenSanPham + '\'' +
+                ", maMau=" + maMau +
+                ", tenMau='" + tenMau + '\'' +
+                ", maSize=" + maSize +
+                ", tenSize='" + tenSize + '\'' +
+                ", giaTien=" + giaTien +
+                ", soLuong=" + soLuong +
+                '}';
+    }
 }

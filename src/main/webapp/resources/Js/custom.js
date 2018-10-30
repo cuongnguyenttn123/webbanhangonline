@@ -1,6 +1,11 @@
 $(document).ready(function () {
-    $("#button").click(function () {
-        alert("cuongnguyen");
+    $("#btn-kiemtra").click(function () {
+        $.ajax({
+            url: "/api/kiemtra",
+            type:"get",
+
+        }).done(function () {
+        })
     });
 
     $(".muangay").click(function () {
@@ -12,7 +17,6 @@ $(document).ready(function () {
         var tensize = $(this).closest("tr").find(".masize").text();
         var soluong = $(this).closest("tr").find(".soluong").attr("data-soluong");
         var giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
-
         $.ajax({
             url: "/api/xuly",
             type:"get",
@@ -27,7 +31,6 @@ $(document).ready(function () {
                 giaTien : giatien
             }
         }).done(function () {
-            alert("cuongnguyen");
         })
     });
 })
