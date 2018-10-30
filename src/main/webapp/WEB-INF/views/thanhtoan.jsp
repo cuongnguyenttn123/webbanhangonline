@@ -80,8 +80,8 @@
                             <td>${giohang.getTenSanPham()}</td>
                             <td>${giohang.getTenMau()}</td>
                             <td>${giohang.getTenSize()}</td>
-                            <td class="soluong" ><input  type="number" value="${giohang.getSoLuong()}" min="1" style="width: 40px;"/></td>
-                            <td class="giatien">${giohang.getGiaTien()} VND</td>
+                            <td class="soluong" ><input class="insoluong" data-insoluong="" type="number" value="${giohang.getSoLuong()}" min="1" style="width: 40px;"/></td>
+                            <td class="giatien" data-giatien="${giohang.getGiaTien()}">${giohang.getGiaTien()*giohang.getSoLuong()} VND</td>
                             <td><button class="btn btn-danger">Xóa</button></td>
                         </tr>
 

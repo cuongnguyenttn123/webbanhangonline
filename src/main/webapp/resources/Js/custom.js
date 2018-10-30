@@ -63,4 +63,12 @@ $(document).ready(function () {
             }
         })
     })
+
+
+    $(".insoluong").change(function () {
+        var soluong = $(this).val();
+        var giatien = $(this).closest("tr").find(".giatien").attr("data-giatien");
+        $(this).closest("tr").find(".giatien").text(soluong*giatien + "VND");
+    })
+
 })
