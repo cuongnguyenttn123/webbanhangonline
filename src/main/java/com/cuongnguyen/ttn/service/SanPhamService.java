@@ -19,4 +19,9 @@ public class SanPhamService implements SanPhamImp {
     public SanPhamEntity getSanPhamById(int id) {
         return sanPhamDAO.getSanPhamById(id);
     }
+
+    public boolean saveSanPham(SanPhamEntity sanPhamEntity) {
+        sanPhamDAO.saveSanPham(sanPhamEntity);
+        return false;
+    }
 }

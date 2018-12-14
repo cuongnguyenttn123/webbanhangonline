@@ -88,17 +88,14 @@ public class ApiController {
     @ResponseBody
     @JsonIgnoreProperties(ignoreUnknown = true)
     public SanPhamPojo formNguoiNhan(@RequestParam String dataJson){
-        System.out.println(dataJson);
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             SanPham sanPham = objectMapper.readValue(dataJson, SanPham.class);
-            System.out.println(sanPham);
-            JsonNode jsonNode = objectMapper.readTree(dataJson);
-            System.out.println(jsonNode.get("tennguoimua"));
-            System.out.println(jsonNode.get("diachi"));
+            System.out.println(sanPham.getDiachi() + sanPham.getTennguoimua());
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
         SanPhamEntity sanPhamEntity = sanPhamService.getSanPhamById(2);
         SanPhamPojo sanPhamPojo = SanPhamConvert.sanPhamEntityconvertPojo(sanPhamEntity);
@@ -109,5 +106,28 @@ public class ApiController {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*try {
+//            SanPham sanPham = objectMapper.readValue(dataJson, SanPham.class);
+//            System.out.println(sanPham);
+            JsonNode jsonNode = objectMapper.readTree(dataJson);
+            System.out.println(jsonNode.get("tennguoimua"));
+            System.out.println(jsonNode.get("diachi"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
 
 }

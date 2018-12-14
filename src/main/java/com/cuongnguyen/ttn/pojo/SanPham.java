@@ -4,6 +4,7 @@ public class SanPham {
     private String tennguoimua;
     private String sodienthoai;
     private String diachi;
+    private String dhinhthuc;
     private String ghichu;
 
     public String getTennguoimua() {
@@ -32,6 +33,13 @@ public class SanPham {
 
     public String getGhichu() {
         return ghichu;
+    }
+    public String getDhinhthuc() {
+        return dhinhthuc;
+    }
+
+    public void setDhinhthuc(String dhinhthuc) {
+        this.dhinhthuc = dhinhthuc;
     }
 
     public void setGhichu(String ghichu) {

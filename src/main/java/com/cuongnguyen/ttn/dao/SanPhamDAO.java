@@ -10,6 +10,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.io.Serializable;
 import java.util.List;
 @Repository
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -27,6 +28,12 @@ public class SanPhamDAO  implements SanPhamImp {
         Session session = sessionFactory.getCurrentSession().getSession();
         SanPhamEntity sanPhamEntity = (SanPhamEntity) session.createQuery("from sanpham where masanpham = '"+id+"'").uniqueResult();
         return sanPhamEntity;
+    }
+    @Transactional
+    public boolean saveSanPham(SanPhamEntity sanPhamEntity) {
+        Session session = sessionFactory.getCurrentSession().getSession();
+        Integer id  = (Integer) session.save(sanPhamEntity);
+        return false;
     }
 
 }

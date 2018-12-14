@@ -26,8 +26,10 @@ $(document).ready(function () {
     })
 
     var files = [];
+    var tenhinh ="";
     $("#hinhanh").change(function(event) {
         files = event.target.files;
+        tenhinh = files[0].name;
         var forms = new FormData();
         forms.append("file", files[0]);
         $.ajax({
@@ -50,7 +52,7 @@ $(document).ready(function () {
             json[field.name] = field.value;
         });
 
-
+        json["hinhsanpham"] = tenhinh;
         $.ajax({
             url: "/api/nguoinhan",
             type:"POST",

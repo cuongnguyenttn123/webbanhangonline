@@ -7,4 +7,5 @@ import java.util.List;
 public interface SanPhamImp{
     List<SanPhamEntity> getListSanPham(int sobatdau);
     SanPhamEntity getSanPhamById(int id);
+    boolean saveSanPham(SanPhamEntity sanPhamEntity);
 }
